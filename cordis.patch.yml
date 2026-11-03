@@ -1,0 +1,7 @@
+# dsh-sidebar-collapse — bundle patch.
+#
+# Installing this bundle selects it in the profile and boots this single row;
+# the module name must match the package name so the loader resolves it.
+- insert:
+    - id: sidebar-collapse
+      name: 'dsh-sidebar-collapse'

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Sidebar Button Fold",
+    "description": "Adds a fold button to the workspace header that collapses the global plugin-button strip, giving the whole sidebar column back to the workspace and session list. Hidden below five panel buttons; the choice is remembered."
+  }
+}

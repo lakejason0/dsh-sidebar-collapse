@@ -1,0 +1,54 @@
+{
+  "name": "dsh-sidebar-collapse",
+  "version": "0.1.0",
+  "description": "DSH 侧边栏：在工作区标题右侧加一个折叠按钮，一键收起全局插件按钮条，把整列高度让给工作区与会话列表。 / Fold the DSH sidebar's global plugin-button strip in one click.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "CHANGELOG.md"
+  ],
+  "engines": { "node": ">=20" },
+  "license": "MIT",
+  "author": "lakejason0 (https://github.com/lakejason0)",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "sidebar",
+    "collapse",
+    "fold",
+    "panels",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lakejason0/dsh-sidebar-collapse.git"
+  },
+  "homepage": "https://github.com/lakejason0/dsh-sidebar-collapse#readme",
+  "bugs": { "url": "https://github.com/lakejason0/dsh-sidebar-collapse/issues" },
+  "icon": "./icon.svg",
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    },
+    "manifestVersion": 1
+  }
+}
