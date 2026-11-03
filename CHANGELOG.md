@@ -2,6 +2,20 @@
 
 All notable changes to this project are documented here.
 
+## [0.1.1] — 2026-11-03
+
+### 文档
+
+- README 增加「展开 / 折叠」对比截图（`docs/`）。
+- 新增维护者发版说明 `RELEASING.md`。
+- 新增 GitHub Actions 发布工作流：推 `v*` 标签后自动把该版本**暂存**到 npm，再由维护者用 2FA 批准发布（trusted publishing，不保存长期令牌）。
+
+### English
+
+- README now shows before/after screenshots (`docs/`).
+- Added maintainer release notes (`RELEASING.md`).
+- Added a GitHub Actions release workflow: pushing a `v*` tag stages the version on npm, and a maintainer approves it with 2FA (trusted publishing, no long-lived token).
+
 ## [0.1.0] — 2026-11-03
 
 ### 新增
