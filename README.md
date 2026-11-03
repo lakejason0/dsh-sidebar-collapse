@@ -5,6 +5,10 @@ A fold switch for the global plugin-button strip in the DeepSeek Harness sidebar
 
 [中文](#中文) · [English](#english)
 
+| 展开（默认）/ Expanded | 按下折叠按钮后 / Folded |
+| --- | --- |
+| ![展开状态：插件按钮条占满侧栏，工作区标题右侧是向上箭头](https://raw.githubusercontent.com/lakejason0/dsh-sidebar-collapse/main/docs/expanded.png) | ![折叠后：插件按钮条整条消失，工作区列表拿到整列高度，箭头向下](https://raw.githubusercontent.com/lakejason0/dsh-sidebar-collapse/main/docs/folded.png) |
+
 ---
 
 ## 中文
