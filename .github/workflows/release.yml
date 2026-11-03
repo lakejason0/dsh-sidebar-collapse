@@ -1,0 +1,56 @@
+name: Release
+
+# Publishes this DSH plugin from CI with **trusted publishing** (OIDC), so no
+# long-lived npm token ever exists on this machine or in repository secrets.
+#
+# One-time setup, run by a maintainer (npm asks for 2FA):
+#   npm trust github dsh-sidebar-collapse \
+#     --file release.yml \
+#     --repo lakejason0/dsh-sidebar-collapse \
+#     --allow-stage-publish --yes
+#
+# Posture: stage-then-approve, npm's recommended one. CI only stages the
+# package; a human approves it with 2FA, so every release keeps
+# proof-of-presence:
+#
+#   1. bump version in package.json + CHANGELOG.md
+#   2. git tag v<version> && git push origin v<version>
+#   3. this workflow stages the package
+#   4. npm stage list  →  npm stage approve <stage-id>
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write # required for the OIDC token exchange
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+
+      # Trusted publishing requires npm >= 11.5.1.
+      - name: Ensure a recent npm
+        run: npm install -g npm@11
+
+      - name: Tag must match package.json
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          version="$(node -p "require('./package.json').version")"
+          if [ "$tag" != "$version" ]; then
+            echo "tag '$tag' does not match package.json version '$version'" >&2
+            exit 1
+          fi
+
+      - name: Stage for maintainer approval
+        run: npm stage publish
