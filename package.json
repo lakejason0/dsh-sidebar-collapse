@@ -1,6 +1,6 @@
 {
   "name": "dsh-sidebar-collapse",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DSH 侧边栏：在工作区标题右侧加一个折叠按钮，一键收起全局插件按钮条，把整列高度让给工作区与会话列表。 / Fold the DSH sidebar's global plugin-button strip in one click.",
   "type": "module",
   "main": "index.js",
