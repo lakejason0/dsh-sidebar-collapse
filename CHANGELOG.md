@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here.
 
+## [Deprecated] — 2026-11-12
+
+- 归档，不再维护。DSH 0.2.2-rc2 起，侧栏的面板按钮条与工作区列表共用同一个滚动容器，滚动即可让位。
+- 已知问题：在 DSH 0.2.2+ 上折叠按钮不会显示——面板行改为 `div.panelEntry` 包裹，旧的「≥5 个按钮」阈值选择器匹配不到。
+
 ## [0.1.1] — 2026-11-03
 
 ### 文档

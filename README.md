@@ -1,3 +1,13 @@
+# ⚠️ 已归档（Deprecated）
+
+**2026-11-12 归档。** DSH **0.2.2** 起，侧栏的「全局面板按钮条」与工作区列表已放进同一个滚动容器：向下滚动侧栏，按钮条会自然滚出视野，不再需要这个插件。
+
+As of DSH 0.2.2 the panel strip and the workspace list share one scroll container, so scrolling the sidebar moves the buttons out of view natively. This plugin is no longer needed and no longer maintained.
+
+已知限制：本插件在 DSH 0.2.2+ 上**不会显示折叠按钮**（面板行结构改为 `div.panelEntry` 包裹，旧的「≥5 个按钮」阈值选择器失效）。需要旧行为请使用 DSH ≤ 0.2.1 与 npm 上的 v0.1.1。
+
+---
+
 # dsh-sidebar-collapse
 
 给 DeepSeek Harness 侧边栏的「全局面板按钮条」加一个折叠开关。
